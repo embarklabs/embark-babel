@@ -9,12 +9,14 @@ module.exports = function(embark) {
   embark.registerPipeline(function(opts) {
     var targetFile = opts.targetFile;
     var source = opts.source;
+    var presets = embark.pluginConfig.presets || ['es2015', 'es2016', 'es2017', 'react'];
+    var minified = (embark.pluginConfig.minified !== undefined ? embark.pluginConfig.minified : true);
 
     if (targetFile.split('.').slice(-1)[0] !== 'js' ) {
       return source;
     }
 
-    return babel.transform(source, {minified: true, presets: ['es2015', 'es2016', 'es2017', 'react']}).code;
+    return babel.transform(source, {minified: minified, presets: presets}).code;
   });
 
 };
