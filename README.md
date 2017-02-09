@@ -1,7 +1,7 @@
 Embark-Babel
 ======
 
-Plugin for Embark to support es5, es6, es7 and react.
+Plugin for [Embark](https://github.com/iurimatias/embark-framework) to support es5, es6, es7 and react.
 
 Installation
 ======
